@@ -1,6 +1,6 @@
  import express from "express";
 import { Login, Register,  } from "../controllers/user.controller";
-import { registerValidation } from "../validatorsauth.validator";
+import { registerValidation } from "../validators/auth.validator";
 import { validationResult } from "express-validator";
 
  const route=express.Router();

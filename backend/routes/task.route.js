@@ -1,7 +1,7 @@
 import express from "express";
 import { DeleteTask, GetTask, Task, UpdateTask } from "../controllers/task.controller";
 import { auth } from "../middleware/auth.middleware";
-import { taskValidation } from "../validatorsauth.validator";
+import { taskValidation } from "../validators/auth.validator";
 import { validationResult } from "express-validator";
 
 const route = express.Router();
