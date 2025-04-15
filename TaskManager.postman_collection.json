@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "2ed03bc4-9d24-4377-a88f-6776af27ec9c",
+		"name": "TaskManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "35147300"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sachin\",\r\n    \"email\":\"sachin@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"saching@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "add task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmExNjI3NzFjZjI4NGVlMjZiZDhmMSIsImVtYWlsIjoic2FjaGluQGdtYWlsLmNvbSIsImlhdCI6MTc0NDQ0Njc5OCwiZXhwIjoxNzQ0NDUwMzk4fQ.0WDqHVcDnwi-GIjE8MCwMvTTeKDObvLOVlMKwwqWKxI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"title\": \"Write Blog Post\",\r\n    \"description\":\"Create a blog post about useEffect and performance optimization.\",\r\n    \"status\": \"In Progress\",\r\n    \"dueDate\": \"2025-04-18\",\r\n    \"priority\": \"Medium\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/task"
+					},
+					"response": []
+				},
+				{
+					"name": "gettask",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmNkY2ViOGQzYzk4MjA4NTE5MDg1OCIsImVtYWlsIjoic2FjaGluZ3VwdGExNzY0NzdAZ21haWwuY29tIiwiaWF0IjoxNzQ0NjM3MjQ2LCJleHAiOjE3NDQ2NzMyNDZ9.1JLVvyTLJbclERB84f3Kt0YTYRhK8eNr4RKiBaDFl1c",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/task"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmExNjI3NzFjZjI4NGVlMjZiZDhmMSIsImVtYWlsIjoic2FjaGluQGdtYWlsLmNvbSIsImlhdCI6MTc0NDQ1MDc5NCwiZXhwIjoxNzQ0NDU0Mzk0fQ.iQhxd6jamzeKg7f1zNHH_wBdEb1GTg524f7mO_Z4f8U",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/task/67fa35b31fe195302b465a79"
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZmNkY2ViOGQzYzk4MjA4NTE5MDg1OCIsImVtYWlsIjoic2FjaGluZ3VwdGExNzY0NzdAZ21haWwuY29tIiwiaWF0IjoxNzQ0NjM3MjQ2LCJleHAiOjE3NDQ2NzMyNDZ9.1JLVvyTLJbclERB84f3Kt0YTYRhK8eNr4RKiBaDFl1c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n   \"status\": \"In Complete\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/task/67fd0d951d64179459e11a26"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:9000/api",
+			"type": "string"
+		}
+	]
+}
