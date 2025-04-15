@@ -74,6 +74,38 @@ npm run server
 🔐 JWT Authentication
 🔍 Express Validator
 
+# 📘 Task Manager API Documentation
+
+🔑 Authentication
+
+✅ Register User
+ POST /api/register
+
+ 🔐 Login User
+POST /api/login
+
+📝 Tasks
+
+All task-related routes are protected and require a valid JWT token in the Authorization header.
+```bash 
+Authorization: Bearer <JWT_TOKEN>
+```
+
+🔄 Get All Tasks
+GET /api/task
+
+➕ Create New Task
+POST /api/task
+
+🧾 Update Task Status
+PUT /api/task/:id
+
+✏️ Edit Task
+PUT /api/task/edit/:id
+
+❌ Delete Task
+DELETE /api/task/:id
+
 
 
 # 📄 Features
