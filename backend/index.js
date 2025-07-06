@@ -10,11 +10,12 @@ const port = process.env.PORT || 9000;
 const app = express();
 
 app.use(
-  cors({
-    origin: "http://localhost:5173", // Allow frontend on localhost:5174
-    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
-  })
+  cors()
+  //   {
+  //   origin: "http://localhost:5173", // Allow frontend on localhost:5174
+  //   methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
+  //   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
+  // }
 );
 
 app.use(express.json());
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("server is running...........");
 });
 app.listen(port, () => {
-  console.log("server is running on  http://localhost:" + port);
+  console.log("server is running on " + port);
 });
 
 app.use("/api/auth", userRoute); //auth route
