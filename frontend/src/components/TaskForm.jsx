@@ -25,11 +25,11 @@ const TaskForm = () => {
     // Do something with the form values
     console.log("Task Submitted:", values);
     api
-      .post("http://localhost:9000/api/task", values)
+      .post("api/task", values)
       .then((res) => {
         Navigate("/");
         console.log(res.data);
-        toast.success(res.data.message)
+        toast.success(res.data.message);
       })
       .catch((err) => {
         console.log(err);
@@ -37,7 +37,6 @@ const TaskForm = () => {
   };
 
   return (
-    
     <div className="max-w-md mx-auto bg-gray-900 text-white p-6 rounded-xl shadow-md border border-gray-700 m-6">
       <h2 className="text-xl font-semibold mb-4">Add / Edit Task</h2>
       <Formik

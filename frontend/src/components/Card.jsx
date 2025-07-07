@@ -29,11 +29,7 @@ const Card = ({ data, onDeleteSuccess }) => {
   const toggleStatus = () => {
     const newStatus = status === "Completed" ? "In Complete" : "Completed";
     api
-      .put(
-        `http://localhost:9000/api/task/${_id}`,
-        { status: newStatus },
-       
-      )
+      .put(`api/task/${_id}`, { status: newStatus })
       .then((res) => {
         setStatus(newStatus);
         console.log("Status updated successfully:", res.data.message);

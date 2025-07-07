@@ -1,13 +1,13 @@
 // import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import {  useNavigate } from "react-router-dom";
-import {  Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import api from "../instance";
 
 const Modal1 = (props) => {
-  const {_id,title,description,status,priority,dueDate}=props.data;
+  const { _id, title, description, status, priority, dueDate } = props.data;
   const formatDate = (isoDateString) => {
     if (!isoDateString) return ""; // handle null/undefined/empty
     const date = new Date(isoDateString);
@@ -34,13 +34,13 @@ const Modal1 = (props) => {
     // Do something with the form values
     console.log("Task Submitted:", values);
     api
-      .put(`http://localhost:9000/api/task/${_id}`, values)
+      .put(`api/task/${_id}`, values)
       .then((res) => {
         // Navigate("/");
         console.log(res.data);
-        props.setData1(values)
-        props.onHide()
-        toast.success(res.data.message)
+        props.setData1(values);
+        props.onHide();
+        toast.success(res.data.message);
       })
       .catch((err) => {
         console.log(err);
@@ -136,7 +136,10 @@ const Modal1 = (props) => {
               </div>
 
               <div className="flex justify-end">
-                <button onClick={props.onHide} className="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition !no-underline m-2">
+                <button
+                  onClick={props.onHide}
+                  className="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-500 transition !no-underline m-2"
+                >
                   Cancel
                 </button>
                 <button
